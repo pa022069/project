@@ -76,13 +76,21 @@ module.exports = {
             filename: 'index.html',
             template: './src/index.html',
             inject: 'body',
-            chunks: ['index']
+            chunks: ['index', 'product'],
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true
+            }
         }),
         new HtmlWebpackPlugin({
             filename: 'product.html',
             template: './src/product.html',
             inject: 'body',
-            chunks: ['product']
+            chunks: ['product'],
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true
+            }
         }),
     ],
     resolve: {
