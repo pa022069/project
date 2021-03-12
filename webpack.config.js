@@ -15,6 +15,13 @@ module.exports = {
         filename: 'js/[name].bundle.js',
         publicPath: '',
     },
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        publicPath: '/',
+        open: true,
+        watchContentBase: true,
+        port: 8080,
+    },
     module: {
         rules: [
             {
