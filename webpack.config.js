@@ -7,8 +7,8 @@ module.exports = {
     // context: path.resolve(__dirname, 'src'),
     entry: {
         // 引入多支 JS
-        index: './src/setting/index.js',
-        product: './src/setting/product.js',
+        index: './src/setting/js/index.js',
+        product: './src/setting/js/product.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -103,7 +103,12 @@ module.exports = {
     resolve: {
         alias: {
             src: path.resolve(__dirname, 'src'),
+            '@setting': path.resolve(__dirname, 'src/setting'),
+            '@js': path.resolve(__dirname, 'src/js'),
+            '@css': path.resolve(__dirname, 'src/css'),
+            '@img': path.resolve(__dirname, 'src/images'),
         },
+        extensions: ['.js', '.jsx']
     },
 };
 
