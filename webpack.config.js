@@ -1,15 +1,45 @@
+// Setting
+/**
+* Represents a book.
+* @name: "頁面名稱"
+* @function: "使用到的 js"
+*/
+const page = [
+    {
+        name: "index",
+        function: ["index", "product"]
+    }, {
+        name: "product",
+        function: ["product"]
+    }
+];
+
+
+
+// Constructor
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const entry = page.reduce(function (o, val) { o[val.name] = `src/setting/${val.name}.js`; return o; }, {});
+
+const createPages = page.map((item) =>
+    new HtmlWebpackPlugin({
+        filename: `${item.name}.html`,
+        template: `./src/${item.name}.html`,
+        inject: 'body',
+        chunks: item.function,
+        minify: {
+            removeComments: true,
+            collapseWhitespace: true
+        }
+    })
+);
+
 module.exports = {
     mode: process.env.NODE_ENV,
     // context: path.resolve(__dirname, 'src'),
-    entry: {
-        // 引入多支 JS
-        index: './src/setting/js/index.js',
-        product: './src/setting/js/product.js',
-    },
+    entry,
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].bundle.js',
@@ -79,26 +109,7 @@ module.exports = {
             filename: "css/[name].min.css"
         }),
         // 輸出多個html 
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: './src/index.html',
-            inject: 'body',
-            chunks: ['index', 'product'],
-            minify: {
-                removeComments: true,
-                collapseWhitespace: true
-            }
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'product.html',
-            template: './src/product.html',
-            inject: 'body',
-            chunks: ['product'],
-            minify: {
-                removeComments: true,
-                collapseWhitespace: true
-            }
-        }),
+        ...createPages
     ],
     resolve: {
         alias: {
