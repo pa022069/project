@@ -4,6 +4,7 @@
 * @name: "頁面名稱"
 * @function: "使用到的 js"
 */
+
 const page = [
     {
         name: "index",
@@ -13,8 +14,6 @@ const page = [
         function: ["product"]
     }
 ];
-
-
 
 // Constructor
 const path = require('path');
@@ -93,6 +92,13 @@ module.exports = {
                             limit: 8192,
                             name: 'images/[name].[ext]',
                         },
+                    },
+                    {
+                        loader: "file-loader",
+                        options: {
+                            name: "[name].[ext]",
+                            outputPath: "images/"
+                        }
                     },
                     {
                         loader: 'image-webpack-loader',
