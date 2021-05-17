@@ -2,7 +2,7 @@
 預備專案
 
 ## 指令
-npm install : 安裝專案所需套件
+npm install : 安裝專案所需套件  
 npm start : 開啟Live Server並進入watch狀態  
 npm run build : 打包專案
 
