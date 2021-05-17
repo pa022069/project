@@ -8,6 +8,6 @@ npm run build : 打包專案
 
 ## 路徑縮寫
 
-'@js': 'src/js'
-'@css': 'src/css'
-'@img': 'src/images'
+'@js': 'src/js'  
+'@css': 'src/css'  
+'@img': 'src/images'  
