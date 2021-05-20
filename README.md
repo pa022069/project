@@ -1,5 +1,5 @@
 # project
-預備專案
+特力+
 
 ## 指令
 npm install : 安裝專案所需套件  
