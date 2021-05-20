@@ -114,7 +114,6 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "css/[name].min.css"
         }),
-        // 輸出多個html 
         ...createPages
     ],
     resolve: {
@@ -128,22 +127,3 @@ module.exports = {
         extensions: ['.js', '.jsx']
     },
 };
-
-// 自動寫入多個頁面
-
-// let htmlPageNames = ['example1', 'example2', 'example3', 'example4'];
-// let multipleHtmlPlugins = htmlPageNames.map(name => {
-//   return new HtmlWebpackPlugin({
-//     template: `./src/${name}.html`, // relative path to the HTML files
-//     filename: `${name}.html`, // output HTML files
-//     chunks: [`${name}`] // respective JS files
-//   })
-// });
-
-// plugins: [
-//     new HtmlWebpackPlugin({
-//       template: "./src/index.html",
-//       chunks: ['main']
-//     })
-//   ].concat(multipleHtmlPlugins)
-
