@@ -1,0 +1,9 @@
+解決合併兩個來源不同的分支
+git merge master --allow-unrelated-histories
+
+設定GitHub路徑
+git remote set-url --push origin some-URL
+git remote set-url origin some-URL
+
+舊專案路徑
+https://github.com/pa022069/projectOld.git

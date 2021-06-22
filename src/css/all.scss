@@ -1,1 +1,12 @@
+/*
+  資料夾結構說明
+1. base: 基礎變數，如：色碼、RWD尺寸、字體大小、字體
+2. vendor: 外部scss，如：外部套件
+3. layout: 共同頁面所需使用的scss，如：header、footer、nav
+4. components: 共同使用樣式的scss
+5. module: scss的 mixin、extend、function
+6. page: 各頁面獨自的scss
+
+*/
+@import "scss-reset/_reset.scss";
 @import "layout/index";
