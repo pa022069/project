@@ -1,7 +1,8 @@
-console.log('Hello World');
-const a = 0;
+import React from "react";
+import { render } from "react-dom";
 
-const x = () => {
-    console.log('123');
-}
-x();
+const Main = () => (
+    <div>123</div>
+);
+
+render(<Main />, document.getElementById("app"));
