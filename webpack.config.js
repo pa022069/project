@@ -92,13 +92,13 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif|svg|webp)$/i,
         use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-              name: 'images/[name].[ext]',
-            },
-          },
+          // {
+          //   loader: 'url-loader',
+          //   options: {
+          //     limit: 8192,
+          //     name: 'images/[name].[ext]',
+          //   },
+          // },
           {
             loader: "file-loader",
             options: {
